@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.670f2824.css",
-    "main.js": "/static/js/main.a10246d8.js",
-    "index.html": "/index.html",
-    "main.670f2824.css.map": "/static/css/main.670f2824.css.map",
-    "main.a10246d8.js.map": "/static/js/main.a10246d8.js.map"
+    "main.css": "/geeky-weather/static/css/main.670f2824.css",
+    "main.js": "/geeky-weather/static/js/main.a10246d8.js",
+    "index.html": "/geeky-weather/index.html",
+    "main.670f2824.css.map": "/geeky-weather/static/css/main.670f2824.css.map",
+    "main.a10246d8.js.map": "/geeky-weather/static/js/main.a10246d8.js.map"
   },
   "entrypoints": [
     "static/css/main.670f2824.css",
