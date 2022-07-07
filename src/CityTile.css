@@ -1,0 +1,70 @@
+.city-tile{
+	border-color: var(--red);
+	border-style: solid;
+	position: relative;
+	padding: 40px 10%;
+	border-radius: 20px;
+	border: 2px solid var(--DARKred);
+	background: var(--textLIGHT);
+	color: var(--textMED);
+}
+
+.city-tile::after {
+	content: ’’;
+	width: 90%;
+	height: 50px;
+	position: absolute;
+	bottom: -12px;
+	left: 5%;
+	z-index: -1;
+	opacity: 0.3;
+	border-radius: 20px;
+	background: var(--textLIGHT);
+}
+
+figcaption {
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.city-temp {
+	font-size: 5rem;
+	font-weight: bold;
+	margin-top: 10px;
+	color: var(--textDARK);
+}
+.city-country {
+	font-size: 00.5em;
+}
+.img-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+}
+
+.city-temp sup {
+	font-size: 0.5em;
+}
+
+.city-name sup {
+	padding: 0.2em 0.6em;
+	border-radius: 30px;
+	color: var(--textLIGHT);
+	background: var(--orange);
+}
+
+.city-weather-icon {
+	margin-top: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+.gky-planet-img {
+	margin-top: 10px;
+	border-radius: 20px;
+	border: 2px solid var(--DARKred);
+	width: 100px;
+	height: 100px;
+}
