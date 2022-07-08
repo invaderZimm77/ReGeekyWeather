@@ -31,10 +31,3 @@ form button {
 form button:hover {
 	background: var(--DARKred);
 }
-
-form .msg {
-	bottom: -40px;
-	left: 0;
-	max-width: 450px;
-	min-height: 40px;
-}

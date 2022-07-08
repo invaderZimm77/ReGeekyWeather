@@ -6,10 +6,6 @@
 h1, h2, h3, h4, h5, p {
   margin: 0;
 }
-body{
-  border-style: solid ;
-  border-color: coral;
-}
 button {
   cursor: pointer;
 }
@@ -71,9 +67,6 @@ body {
 
 .list-of-cities {
   margin: 50px 0 20px;
-}
-
-.list-of-cities {
   display: grid;
   grid-gap: 32px 20px;
   grid-template-columns: repeat(4, 1fr);
@@ -134,13 +127,6 @@ body {
     margin: 20px 0 0 0;
   }
 
-  .search-form .msg {
-    position: static;
-    max-width: none;
-    min-height: 0;
-    margin-top: 10px;
-  }
-
     .list-of-cities {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -160,12 +146,6 @@ body {
   .search-form button {
     margin: 20px 0 0 0;
   }
-
-  /* .search-form .msg {
-    max-width: none;
-    min-height: 0;
-    margin-top: 10px;
-  } */
 }
 
 @media screen and (max-width: 500px) {
