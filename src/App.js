@@ -77,9 +77,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="heading">Geeky Weather</h1>
-      <section className="search">
-        <SearchForm search={search} />
-      </section>
+      <SearchForm search={search} />
       <br />
       <ListOfCities cityList={cityList} />
     </div>

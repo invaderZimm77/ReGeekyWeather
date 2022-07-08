@@ -120,21 +120,21 @@ body {
     margin-top: 20px;
   }
 
-  .search-form form {
+  .search-form {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .search-form form input,
-  .search-form form button {
+  .search-form input,
+  .search-form button {
     width: 100%;
   }
 
-  .search-form form button {
+  .search-form button {
     margin: 20px 0 0 0;
   }
 
-  .search-form form .msg {
+  .search-form .msg {
     position: static;
     max-width: none;
     min-height: 0;
@@ -147,25 +147,25 @@ body {
 }
 
 @media screen and (max-width: 700px) {
-  .search-form form {
+  .search-form {
     flex-direction: column;
     justify-self: center;
   }
 
-  .search-form form input,
-  .search-form form button {
+  .search-form input,
+  .search-form button {
     width: 100%;
   }
 
-  .search-form form button {
+  .search-form button {
     margin: 20px 0 0 0;
   }
 
-  .search-form form .msg {
+  /* .search-form .msg {
     max-width: none;
     min-height: 0;
     margin-top: 10px;
-  }
+  } */
 }
 
 @media screen and (max-width: 500px) {
