@@ -1,9 +1,10 @@
-
+import { CloseButton } from "react-bootstrap";
 import "../CityTile.css";
 
 const CityTile = (props) => {
   return (
     <div className="city-tile">
+      <button className="city-tile-closebutton">X</button>
       <h2 className="city-name">
         <span>{props.cityName}</span>
         <sup className="city-country">{props.country}</sup>

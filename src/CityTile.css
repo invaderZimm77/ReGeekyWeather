@@ -27,7 +27,12 @@ figcaption {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
-
+.city-tile-closebutton {
+	border-style: solid;
+	border-width: 5px;
+	font-size: large;
+	font-weight:900;
+}
 .city-temp {
 	font-size: 5rem;
 	font-weight: bold;
