@@ -1,6 +1,8 @@
-import { CloseButton } from "react-bootstrap";
 import "../CityTile.css";
 
+handleSelfDestruct(props){
+
+}
 const CityTile = (props) => {
   return (
     <div className="city-tile">
