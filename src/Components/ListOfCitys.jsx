@@ -1,8 +1,7 @@
-
 import React from "react";
 
 const ListOfCitys = ({ cityList }) => {
-  return <section className="list-of-cities">{cityList}</section>;
+  return <ul className="list-of-cities">{cityList}</ul>;
 };
 
 export default ListOfCitys;

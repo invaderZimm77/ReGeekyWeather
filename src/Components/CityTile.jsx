@@ -1,12 +1,15 @@
 import "../CityTile.css";
 
-handleSelfDestruct(props){
 
-}
 const CityTile = (props) => {
   return (
-    <div className="city-tile">
-      <button className="city-tile-closebutton">X</button>
+    <li className="city-tile">
+      <button
+        className="city-tile-closebutton"
+        onClick={() => props.handleSelfDestruct(props.keyVal)}
+      >
+        X
+      </button>
       <h2 className="city-name">
         <span>{props.cityName}</span>
         <sup className="city-country">{props.country}</sup>
@@ -20,7 +23,6 @@ const CityTile = (props) => {
         Humidity: {Math.round(props.humidity ?? 0)}
         <sup className="city-temp-unit">%</sup>
       </div>
-
       <figure>
         <section className="img-row">
           <img
@@ -40,7 +42,7 @@ const CityTile = (props) => {
           {props.gkyPlanetQuip}
         </figcaption>
       </figure>
-    </div>
+    </li>
   );
 };
 
@@ -51,7 +53,7 @@ CityTile.defaultProps = {
   humidity: null,
   currentCondition: "ᚢᚣᚤᚥ ᚨᚩᚪᚫᚬᚭᚮᚯ",
   weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
-  gkyPlanetName: "planet",
+  gkyPlanetName: "Planet",
   gkyPlanetImg:
     "https://media.istockphoto.com/vectors/not-found-page-404-error-file-not-found-vector-id1139665574",
   gkyPlanetQuip: "m a quip. puip quip",

@@ -9,15 +9,30 @@ function App() {
   const [cityList, setCityList] = useState([]);
   const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 
+  const handleSelfDestruct = (cityKeyForDemo) => {
+    console.log("X button pressed", cityKeyForDemo);
+
+    setCityList(cityList.filter(function (city) {
+        console.log(city);
+        return city.key !== cityKeyForDemo;
+      }),
+    );
+  };
+
+  // const handleSelfDestruct = (cityKeyForDemo) => {
+  //   console.log("X button pressed", cityKeyForDemo);
+  //   setCityList(cityList.filter((city) => city.key !== cityKeyForDemo));
+  //   return cityList;
+  // };
+
   const search = async (inputCity) => {
-    
-    //console.log(cityList[2].cityName)
-    
-    if (cityList.length >= 0) {
+    console.log("CityList length is", cityList.length);
+
+    if (cityList.length > 0) {
       const filteredArray = cityList.filter((el) => {
         let content = "";
-        console.log(inputCity)
-        
+        console.log(inputCity);
+
         // if (inputCity.includes(",")) {
         // //   // if (inputCity.split(",")[1].length > 2) {
         // //   //   inputCity = inputCity.split(",")[0];
@@ -29,11 +44,10 @@ function App() {
         //   //content = el.cityName.toLowerCase();
         // }
         return inputCity.toLowerCase();
-        
-       });
+      });
 
-      console.log(filteredArray)
-      console.log(filteredArray.cityName)
+      console.log(filteredArray);
+      // console.log(filteredArray.);
       // if (filteredArray.length > 0) {
       //   alert(
       //     `You already know the weather for ${filteredArray[0].querySelector(".city-name span").textContent}
@@ -43,12 +57,10 @@ function App() {
       //   return;
       // }
     }
-    console.log(cityList.length);
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
     );
     const foundCity = await response.json();
-
     const { main, name, sys, weather } = foundCity;
     const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
 
@@ -68,8 +80,11 @@ function App() {
         gkyPlanetImg={GKYplanet[1]}
         gkyPlanetQuip={GKYplanet[2]}
         key={name + sys.country}
+        keyVal={name + sys.country}
+        handleSelfDestruct={handleSelfDestruct}
       />
     );
+
     setCityList([...cityList, newCity]);
   };
 
