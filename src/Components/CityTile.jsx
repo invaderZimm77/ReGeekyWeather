@@ -1,19 +1,20 @@
 import "../CityTile.css";
 
-
 const CityTile = (props) => {
   return (
     <li className="city-tile">
-      <button
-        className="city-tile-closebutton"
-        onClick={() => props.handleSelfDestruct(props.keyVal)}
-      >
-        X
-      </button>
-      <h2 className="city-name">
-        <span>{props.cityName}</span>
-        <sup className="city-country">{props.country}</sup>
-      </h2>
+      <div className="city-tile-top-row">
+        <h2 className="city-name">
+          <span>{props.cityName}</span>
+          <sup className="city-country">{props.country}</sup>
+        </h2>
+        <button
+          className="city-tile-closebutton"
+          onClick={() => props.handleSelfDestruct(props.keyVal)}
+        >
+          X
+        </button>
+      </div>
       <div className="city-temp">
         {Math.round(props.temp ?? 0)}
         <sup className="city-temp-unit">°F</sup>

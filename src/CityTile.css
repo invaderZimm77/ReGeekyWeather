@@ -7,6 +7,7 @@
 	border: 2px solid var(--DARKred);
 	background: var(--textLIGHT);
 	color: var(--textMED);
+	text-align: left;
 }
 
 .city-tile::after {
@@ -28,11 +29,18 @@ figcaption {
 	letter-spacing: 0.05em;
 }
 .city-tile-closebutton {
-	border-style: solid;
 	border-width: 5px;
 	font-size: large;
 	font-weight:900;
+	font-family: monospace;
 }
+
+.city-tile-top-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 .city-temp {
 	font-size: 5rem;
 	font-weight: bold;
