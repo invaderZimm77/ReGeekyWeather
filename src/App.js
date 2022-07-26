@@ -97,7 +97,7 @@ function App() {
         setCityList([...cityList, newCity]);
       })
       .catch((error) => {
-        window.alert(error);
+        window.alert("Please enter a valid city. You may need to search for a nearby city if we can't find yours specifically.");
         searchBoxReset();
       });
   };
