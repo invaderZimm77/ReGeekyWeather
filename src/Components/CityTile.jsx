@@ -57,7 +57,7 @@ CityTile.defaultProps = {
   gkyPlanetName: "Planet",
   gkyPlanetImg:
     "https://media.istockphoto.com/vectors/not-found-page-404-error-file-not-found-vector-id1139665574",
-  gkyPlanetQuip: "m a quip. puip quip",
+  gkyPlanetQuip: "I'm a quip. puip quip",
   key: null,
 };
 export default CityTile;

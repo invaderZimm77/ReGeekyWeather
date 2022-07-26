@@ -20,6 +20,11 @@ function App() {
     );
   };
 
+  const searchBoxReset = () => {
+    document.getElementById("searchBox").value = "";
+    // document.getElementById("searchBox").focus();
+  };
+
   const search = async (inputCity) => {
     console.log("CityList length is", cityList.length);
 
@@ -52,36 +57,49 @@ function App() {
     //   }
     // }
 
-    console.log(inputCity)
-    const response = await fetch(
+    console.log(inputCity);
+    
+
+    fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
-    );
-    const foundCity = await response.json();
-    const { main, name, sys, weather } = foundCity;
-    const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
-    const GKYplanet = GKYplanetPicker(
-      Math.round(main.temp),
-      Math.round(main.humidity)
-    );
+    )
+      .then((res) => {
+        // console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data)
+        const { main, name, sys, weather } = data;
+        const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+        const GKYplanet = GKYplanetPicker(
+          Math.round(main.temp),
+          Math.round(main.humidity)
+        );
 
-    const newCity = (
-      <CityTile
-        cityName={name}
-        country={sys.country}
-        temp={main.temp}
-        humidity={main.humidity}
-        currentCondition={weather[0]["description"]}
-        weatherIcon={icon}
-        gkyPlanetName={GKYplanet[0]}
-        gkyPlanetImg={GKYplanet[1]}
-        gkyPlanetQuip={GKYplanet[2]}
-        key={name + sys.country}
-        keyVal={name + sys.country}
-        handleSelfDestruct={handleSelfDestruct}
-      />
-    );
+        const newCity = (
+          <CityTile
+            cityName={name}
+            country={sys.country}
+            temp={main.temp}
+            humidity={main.humidity}
+            currentCondition={weather[0]["description"]}
+            weatherIcon={icon}
+            gkyPlanetName={GKYplanet[0]}
+            gkyPlanetImg={GKYplanet[1]}
+            gkyPlanetQuip={GKYplanet[2]}
+            key={name + sys.country}
+            keyVal={name + sys.country}
+            handleSelfDestruct={handleSelfDestruct}
+          />
+        );
 
-    setCityList([...cityList, newCity]);
+        searchBoxReset();
+        setCityList([...cityList, newCity]);
+      })
+      .catch((error) => {
+        window.alert(error);
+        searchBoxReset();
+      });
   };
 
   return (
