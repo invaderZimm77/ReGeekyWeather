@@ -13,9 +13,10 @@ function App() {
     console.log("X button pressed on", cityKeyForDemo);
 
     setCityList(
-      cityList.filter(function (city) {
+      cityList.filter(function (city) => {
         console.log(city);
-        return city.key !== cityKeyForDemo;
+        console.log("city.key ", city);
+        return city.props.key !== cityKeyForDemo;
       })
     );
   };
@@ -26,39 +27,35 @@ function App() {
   };
 
   const search = async (inputCity) => {
-    console.log("CityList length is", cityList.length);
+    if (cityList.length > 0) {
+      const filteredArray = cityList.filter((el) => {
+        let content;
+        if (inputCity.includes(",")) {
+          if (inputCity.split(",")[1].length > 2) {
+            inputCity = inputCity.split(",")[0];
+            content = el.props.cityName.toLowerCase();
+          } else {
+            content = el.props.cityName.toLowerCase();
+          }
+        } else {
+          console.log(el);
+          console.log(el.props.cityName);
+          content = el.props.cityName.toLowerCase();
+        }
+        return content == inputCity.toLowerCase();
+      });
 
-    // if (cityList.length > 0) {
-    //   const filteredArray = cityList.filter((el) => {
-    //     let content = "";
-    //     console.log(inputCity);
-    //     if (inputCity.includes(",")) {
-    //       // if (inputCity.split(",")[1].length > 2) {
-    //       //   inputCity = inputCity.split(",")[0];
-    //       //   content = el.cityName.toLowerCase();
-    //       // } else {
-    //       //   content = el.cityName.toLowerCase();
-    //       // }
-    //     } else {
-    //       console.log("no comma")
-    //       // content = el.cityName.toLowerCase();
-    //     }
-    //     return inputCity.toLowerCase();
-    //   });
+      // console.log(filteredArray);
+      if (filteredArray.length > 0) {
+        alert(
+          `You already know the weather for ${filteredArray[0].props.cityName}...otherwise please be more specific by providing the country code as well 😉`
+        );
+        searchBoxReset();
+        return;
+      }
+    }
 
-    //   console.log(filteredArray);
-    //   // console.log(filteredArray.);
-    //   if (filteredArray.length > 0) {
-    //     alert(
-    //       `You already know the weather for${filteredArray[0].cityName}...otherwise please be more specific by providing the country code as well 😉`
-    //     );
-    //     // boxReset();
-    //     return;
-    //   }
-    // }
-
-    console.log(inputCity);
-    
+    // console.log(inputCity);
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
@@ -68,7 +65,7 @@ function App() {
         return res.json();
       })
       .then((data) => {
-        console.log(data)
+        console.log(data);
         const { main, name, sys, weather } = data;
         const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
         const GKYplanet = GKYplanetPicker(
@@ -97,7 +94,9 @@ function App() {
         setCityList([...cityList, newCity]);
       })
       .catch((error) => {
-        window.alert("Please enter a valid city. You may need to search for a nearby city if we can't find yours specifically.");
+        window.alert(
+          "Please enter a valid city. You may need to search for a nearby city if we can't find yours specifically."
+        );
         searchBoxReset();
       });
   };
