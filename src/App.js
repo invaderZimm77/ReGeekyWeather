@@ -11,14 +11,18 @@ function App() {
 
   const handleSelfDestruct = (cityKeyForDemo) => {
     console.log("X button pressed on", cityKeyForDemo);
+    console.log("this is cityList", cityList.key);
 
-    setCityList(
-      cityList.filter(function (city) => {
-        console.log(city);
-        console.log("city.key ", city);
-        return city.props.key !== cityKeyForDemo;
-      })
-    );
+    // setCityList(
+    //   cityList.filter((city) => {
+    //     console.log(city);
+    //     console.log("city.key", city.key,
+    //     "cityKeyForDemo", cityKeyForDemo);
+
+    //     console.log(city.props.key !== cityKeyForDemo);
+    //     return city.props.key !== cityKeyForDemo;
+    //   })
+    // );
   };
 
   const searchBoxReset = () => {
@@ -90,8 +94,9 @@ function App() {
           />
         );
 
-        searchBoxReset();
+        // console.log( setCityList([...cityList, newCity]));
         setCityList([...cityList, newCity]);
+        searchBoxReset();
       })
       .catch((error) => {
         window.alert(
