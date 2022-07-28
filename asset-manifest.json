@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ReGeekyWeather/static/css/main.4d298370.css",
-    "main.js": "/ReGeekyWeather/static/js/main.b2e70879.js",
+    "main.js": "/ReGeekyWeather/static/js/main.0c6e1e8a.js",
     "index.html": "/ReGeekyWeather/index.html",
     "main.4d298370.css.map": "/ReGeekyWeather/static/css/main.4d298370.css.map",
-    "main.b2e70879.js.map": "/ReGeekyWeather/static/js/main.b2e70879.js.map"
+    "main.0c6e1e8a.js.map": "/ReGeekyWeather/static/js/main.0c6e1e8a.js.map"
   },
   "entrypoints": [
     "static/css/main.4d298370.css",
-    "static/js/main.b2e70879.js"
+    "static/js/main.0c6e1e8a.js"
   ]
 }
