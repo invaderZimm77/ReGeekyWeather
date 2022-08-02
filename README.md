@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+App Title: ReGeeky Weather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App Description: I wanted to take one of my very first projects and re-create it with more modern tools and also want to be able to expand on what ive learned. This app takes input and gives visual feed back of the requested city's current weather with a geeky planet that has similar weather and a quip About the weather
 
-## Available Scripts
+Link to deployed site: https://invaderzimm77.github.io/ReGeekyWeather/
 
-In the project directory, you can run:
+API used: https://openweathermap.org/api
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+API Snippet:
+   ```
+   {
+    "coord": {
+        "lon": -77.3997,
+        "lat": 39.4668
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 73.78,
+        "feels_like": 74.52,
+        "temp_min": 70.88,
+        "temp_max": 77.29,
+        "pressure": 1024,
+        "humidity": 78
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.01,
+        "deg": 232,
+        "gust": 1.99
+    },
+    "clouds": {
+        "all": 90
+    },
+    "dt": 1633635811,
+    "sys": {
+        "type": 2,
+        "id": 2038516,
+        "country": "US",
+        "sunrise": 1633605095,
+        "sunset": 1633646569
+    },
+    "timezone": -14400,
+    "id": 4355594,
+    "name": "Frederick",
+    "cod": 200
+}
+```
+Wireframes: https://whimsical.com/starwars-app-YEdHW1cMkBckeT8WUzmotn@2Ux7TurymN8kYUSbEJLp
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+MVP: takes user input 
+    returns current weather based on input
+    returns a geeky planet based on current temp and humidity.
+    able to have multipule city tiles
+    give a quip about the weather
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+PMVP:
+        based on crosscompare from starwars api
+		 be able to display more complex information
+Goals:
+	 to show myself what I had learned but also what I could learn on the fly.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Timeframes: all time Estimaited -- 20% planning/research 60%coding 20%polishing/refining/debuggingCSS.
+    psuedocode/wireframe -- 3hours
+    coding to mvp -- 10hours
+    beyondMVP -- 2hours
+    debug/head-scratching time -- 2hours

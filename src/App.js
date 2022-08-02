@@ -40,7 +40,6 @@ function App() {
         return content === inputCity.toLowerCase();
       });
 
-      // console.log(filteredArray);
       if (filteredArray.length > 0) {
         alert(
           `You already know the weather for ${filteredArray[0].name}...otherwise please be more specific by providing the country code as well 😉`
@@ -49,8 +48,6 @@ function App() {
         return;
       }
     }
-
-    // console.log(inputCity);
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
@@ -61,15 +58,18 @@ function App() {
       })
       .then((data) => {
         console.log(data);
-        console.log("data.cod=", data.cod);
+        // console.log("data.cod=", data.cod);
+        // console.log("DateTime", data.dt);
+        // const milliseconds = data.dt * 1000;
+        // const dateObject = new Date(data.dt * 1000).getMonth();
+        // const humanDateFormat = dateObject.toLocaleString();
+        // console.log(dateObject, humanDateFormat);
 
-          if (data.cod === '404') {
-            throw Error(data.message);
-          }
+        if (data.cod === "404") {
+          throw Error(data.message);
+        }
         setCityList([...cityList, data]);
         searchBoxReset();
-
-
       })
       .catch((error) => {
         window.alert(
@@ -78,7 +78,7 @@ function App() {
         searchBoxReset();
       });
   };
-
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
   return (
     <div className="App">
       <h1 className="heading">Geeky Weather</h1>
