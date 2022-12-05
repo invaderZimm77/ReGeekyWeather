@@ -1,6 +1,12 @@
+import React from "react";
 import "../CityTile.css";
+import { CityTileType } from "../types";
 
-const CityTile = (props) => {
+interface Props extends CityTileType {
+  handleSelfDestruct: (keyVal: any) => void;
+}
+
+const CityTile = (props: Props) => {
   return (
     <li className="city-tile">
       <div className="city-tile-top-row">
@@ -47,17 +53,4 @@ const CityTile = (props) => {
   );
 };
 
-CityTile.defaultProps = {
-  cityName: "No city",
-  country: "No Country",
-  temp: null,
-  humidity: null,
-  currentCondition: "ᚢᚣᚤᚥ ᚨᚩᚪᚫᚬᚭᚮᚯ",
-  weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
-  gkyPlanetName: "Planet",
-  gkyPlanetImg:
-    "https://media.istockphoto.com/vectors/not-found-page-404-error-file-not-found-vector-id1139665574",
-  gkyPlanetQuip: "I'm a quip. puip quip",
-  key: null,
-};
 export default CityTile;
